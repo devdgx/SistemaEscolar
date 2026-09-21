@@ -167,7 +167,27 @@ public class Main {
 
                     System.out.println(resultado);
                     break;
-            }
+
+
+                case 8:
+
+                    boolean EncontradaTurma = false;
+                    System.out.println("Numero da turma: ");
+                    int numeroDaTurma = scanner.nextInt();
+
+
+                    for (int i = 0; i < turmas.length; i++) {
+                            if (turmas[i] != null){
+                                if (numeroDaTurma == turmas[i].getNumeroSala()){
+                                    EncontradaTurma = true;
+                                    turmas[i].listarAlunos();
+                                }
+                        }
+                    }
+
+                    if (EncontradaTurma == false){
+                        System.out.println("Nenhum Turma Cadastrada!");
+                    }
 
         } while (opcao != 0);
     }
