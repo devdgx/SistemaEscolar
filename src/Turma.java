@@ -14,12 +14,20 @@ public class Turma {
 
 
     public boolean adicionarAlunoNaTurma(Aluno aluno) {
-        for (int i = 0; i < alunos.length; i++) {
 
-            if (alunos[i] == null) {
+        for (Aluno aluno1 : alunos) {
+            if (aluno1 != null) {
+                if (aluno1.getMatricula() == aluno.getMatricula()) {
+                    System.out.println("Esse Aluno ja foi adicionado!");
+                    return false;
+                }
+            }
+        }
+
+        for (int i = 0; i < alunos.length; i++) {
+            if (alunos[i] ==null){
                 alunos[i] = aluno;
                 return true;
-
             }
         }
         return false;
