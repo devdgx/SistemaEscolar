@@ -25,6 +25,13 @@ public class Turma {
         return false;
     }
 
+    public void listarAlunos(){
+        for (Aluno aluno : alunos){
+            if (aluno != null){
+                System.out.println("Aluno: " + aluno.getNome());
+            }
+        }
+    }
 
     public int getNumeroSala() {
         return numeroSala;
