@@ -5,6 +5,7 @@ public class Aluno {
     private  int matricula;
     private int [] notas;
     private static int contadorDeMatricula = 1;
+    private Turma turma;
 
     //Objeto é criando  add com numero de matricula
     public Aluno(String nome, int idade) {
@@ -49,6 +50,19 @@ public class Aluno {
         this.notas = notas;
     }
 
+    public static int getContadorDeMatricula() {
+        return contadorDeMatricula;
+    }
 
+    public static void setContadorDeMatricula(int contadorDeMatricula) {
+        Aluno.contadorDeMatricula = contadorDeMatricula;
+    }
 
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
 }
