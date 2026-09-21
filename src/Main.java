@@ -165,7 +165,48 @@ public class Main {
 
                     String resultado = (media >= 7)? "Aprovado" : (media >= 5 && media <=7)? "Recuperação": "Reprovado";
 
-                    System.out.println(resultado);
+
+
+                case 7:
+                    System.out.println("Qual ID aluno você quer adicionar na turma: ");
+
+                    int buscarIdAluno = scanner.nextInt();
+
+                    System.out.println("Qual turma vc quer adicionar o aluno: ");
+
+                    int idSala = scanner.nextInt();
+
+                    boolean alunoEncontrado = false;
+                    boolean turmaEncontrada = false;
+                    for (int i = 0; i < alunos.length; i++) {
+                        if (alunos[i] != null) {
+                            if (buscarIdAluno == alunos[i].getMatricula()) {
+                                alunoEncontrado = true;
+
+                                for (int j = 0; j < turmas.length; j++) {
+                                    if (turmas[j] != null) {
+                                        if (idSala == turmas[j].getNumeroSala()) {
+                                            turmaEncontrada = true;
+                                            boolean alunoAdicionado = turmas[j].adicionarAlunoNaTurma(alunos[i]);
+
+                                            if (alunoAdicionado == true){
+                                                alunos[i].setTurma(turmas[j]);
+                                                System.out.println("Aluno foi adicionado na Turma!");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (alunoEncontrado != true) {
+                        System.out.println("Aluno não Encontrado!");
+                    }
+
+                    if (turmaEncontrada != true) {
+                        System.out.println("Turma não Encontrada!");
+                    }
                     break;
 
 
